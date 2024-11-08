@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Spreadsheet0 (
 
 with open('data/shipping_data_0.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',', quotechar='|')
-    next(reader)  # Пропуск заголовка
+    next(reader)
     for row in reader:
         cursor.execute('INSERT INTO Spreadsheet0 VALUES (?, ?, ?, ?, ?, ?)', row)
 
